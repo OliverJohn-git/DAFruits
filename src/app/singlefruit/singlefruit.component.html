@@ -8,25 +8,18 @@
             <p><b>Bewertung:</b></p>
             <div>
 
-                for (let count = 0; count < 5; count++) { let starImage: string; switch (true) { case stars>= count + 1:
-                    // Ganze Sterne
-                    starImage = `<img src="../../assets/img/stars/star.svg" alt="full star" srcset="">`;
-                    break;
-                    case stars >= count + 0.5: // Halbe Sterne
-                    starImage = `<img src="../../assets/img/stars/star-half.svg" alt="half star" srcset="">`;
-                    break;
-                    default: // Leere Sterne
-                    starImage = `<img src="../../assets/img/stars/star-empty.svg" alt="empty star" srcset="">`;
-                    break;
+                @for(count of [0,1,2,3,4,]; track fruitlist){
+
+                    @if(fruit.stars >= count){
+                        <img src="../../assets/img/stars/star.svg" alt="" srcset="">
+                    }@else if (fruit.stars >= count -0.5){
+                        <img src="../../assets/img/stars/star-half.svg" alt="" srcset="">
+                    }@else {
+                        <img src="../../assets/img/stars/star-empty.svg" alt="" srcset="">
                     }
 
-                    starList.push(starImage);
-                    }
-
-                    return starList.join("\n");
-                    };
-
-                    <p [ngStyle]="{'color': fruit.stars > 3 ? fontColorGood : fontColorBad }">({{fruit.stars}})</p>
+                }
+                <p [ngStyle]="{'color': fruit.stars > 3 ? fontColorGood : fontColorBad }">({{fruit.stars}})</p>
             </div>
         </div>
         <div><b>Art:</b><br>{{fruit.genus}}</div>
@@ -34,9 +27,9 @@
         <div>
             <div>
                 @for (review of fruit.reviews; track review) {
-                <div><b>{{review.name}}:</b><br>{{review.text}}</div>
+                    <div><b>{{review.name}}:</b><br>{{review.text}}</div>
                 }@empty{
-                no Comments available
+                    no Comments available
                 }
             </div>
             <div><input type="text"><button><img src="../../assets/img/arrow-35-32.png" alt="" srcset=""></button>
