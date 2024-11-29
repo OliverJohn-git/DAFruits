@@ -63,4 +63,15 @@ export class FruitlistComponent {
       reviews:[{name: "Kevin W.", text: "Ganz gut in der Regel!"},{name: "Oliver J.", text: "Absoluter Favorit beim Frühstück"}],
     },
   ]
+
+  getStarType(stars: number, count: number): string {
+    if (stars >= count) {
+      return 'full';
+    } else if (stars >= count - 0.5) {
+      return 'half';
+    } else {
+      return 'empty';
+    }
+  }
+  
 }
