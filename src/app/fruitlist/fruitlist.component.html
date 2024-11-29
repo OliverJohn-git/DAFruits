@@ -1,3 +1,7 @@
-@for(item of fruitlist; track item.name){
-    <p>{{item.name}}</p>
-}
+<div class="fruitlist_content">
+    @for(fruit of fruitlist; track fruit.name){
+       
+        <app-singlefruit [fruitnumber]="index"></app-singlefruit>
+
+    }
+</div><stei
