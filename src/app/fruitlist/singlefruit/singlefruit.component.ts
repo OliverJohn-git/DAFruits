@@ -20,10 +20,10 @@ export class SinglefruitComponent {
 
   inputData ="";
 
-  @Output()fruitname = new EventEmitter<string>();
+  // @Output()fruitname = new EventEmitter<string>();
 
-    sendInputData(){
-      this.fruitname.emit(this.inputData);
-      this.inputData = "";
-    }
+  //   sendInputData(){
+  //     this.fruitname.emit(this.inputData);
+  //     this.inputData = "";
+  //   }
 }
