@@ -10,14 +10,14 @@
                 @for (count of [1,2,3,4,5]; track fruit) {
 
                     @if (fruit.stars >= count) {
-                        <img src="./assets/img/stars/star.svg" alt="Full Star">
+                        <img src="/assets/img/stars/star.svg" alt="Full Star">
                     }@else if (fruit.stars >= count -0.5) {
-                        <img src="./assets/img/stars/star-half.svg" alt="Half Star">
+                        <img src="/assets/img/stars/star-half.svg" alt="Half Star">
                     }@else {
-                        <img src="./assets/img/stars/star-empty.svg" alt="Empty Star">
+                        <img src="/assets/img/stars/star-empty.svg" alt="Empty Star">
                     }
                 }
-                <p {{fruit.stars}}></p>
+                <p>{{fruit.stars}}</p>
             </div>
         </div>
         <div><b>Art:</b><br>{{fruit.genus}}</div>
@@ -30,9 +30,9 @@
                     no Comments available
                 }
             </div>
-            <!-- <div>
-                <input type="text"><button><img (click)="sendInputData()" src="../../assets/img/arrow-35-32.png" alt="" srcset=""></button>
-            </div> -->
+            <div>
+                <input type="text"><button><img (click)="sendInputData()" src="/assets/img/arrow-35-32.png" alt="" srcset=""></button>
+            </div>
         </div>
     </div>
 </section>
